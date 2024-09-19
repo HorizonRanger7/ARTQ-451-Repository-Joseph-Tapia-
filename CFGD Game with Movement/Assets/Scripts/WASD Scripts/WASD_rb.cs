@@ -10,10 +10,6 @@ public class WASD_rb : MonoBehaviour
     public float forceAmt = 10f;
 
     private int i = 8;
-
-   
-
-    AudioSource audioSource;
     
     private Rigidbody2D rb;
     
@@ -22,9 +18,6 @@ public class WASD_rb : MonoBehaviour
     {
      //Find the Rigibody on the object this script is on
      rb = GetComponent<Rigidbody2D>();
-
-     //Find the AudioSource
-     audioSource = GetComponent<AudioSource>();
 
     }
 
@@ -55,15 +48,15 @@ public class WASD_rb : MonoBehaviour
 
     }
 
-     void OnCollisionEnter2D(Collision2D other) 
+    //OnCollisionEnter2D happens when two 2D objects with Colliders hit each other.
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Impact();
+        //Make the Cube change color when it hits another cube.
+        if(collision.transform.tag == "Player2");
+        {
+            GetComponent<SpriteRenderer>().color = Color.red;
+        }
     }
 
-    void Impact()
-	{
-		audioSource.Stop();
-		audioSource.PlayOneShot(impactSound);
-    }
 
 }
