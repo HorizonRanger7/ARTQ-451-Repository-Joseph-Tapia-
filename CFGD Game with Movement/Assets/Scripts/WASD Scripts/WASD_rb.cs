@@ -26,10 +26,7 @@ public class WASD_rb : MonoBehaviour
      rb = GetComponent<Rigidbody2D>();
 
      cb = GetComponent<SpriteRenderer>();
-
-    //Find the GameManager
-    gameManager = FindObjectOfType<GameManager>();
-
+     
     }
 
     // Update is called once per frame
@@ -76,8 +73,7 @@ public class WASD_rb : MonoBehaviour
             cb.color = Color.magenta;
         }
 
-        //Score Plus 1
-        gameManager.sc_num ++;
+        
     }
 
 
