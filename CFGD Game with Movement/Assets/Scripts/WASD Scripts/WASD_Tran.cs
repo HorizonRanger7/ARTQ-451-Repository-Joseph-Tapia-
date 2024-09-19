@@ -7,10 +7,15 @@ public class WASD_Tran : MonoBehaviour
     //Variables
     public float speed = 3f;
 
-    // Start is called before the first frame update
-    void Start()
+    public GameObject pl2;
+
+    private bool spawn = true;
+
+
+    //Awake happens on spawn of an Item
+    private void Awake()
     {
-        
+        pl2 = this.gameObject;
     }
 
     // Update is called once per frame
@@ -41,5 +46,23 @@ public class WASD_Tran : MonoBehaviour
         }
 
         transform.position = pos;
+
+        
+    }
+
+        private void OnCollisionExit2D(Collision2D collision) 
+    {
+        //Only spawn if true
+        if(spawn)
+        {
+        //Spawn a new Player 2 at a random location
+        var pos = new Vector2(Random.Range(-7,7), Random.Range(-2, 2));
+        Instantiate(pl2, pos, Quaternion.identity);
+
+        //Destroy player
+        Destroy(this.gameObject);
+        spawn = true;
+        }
     }
 }
+

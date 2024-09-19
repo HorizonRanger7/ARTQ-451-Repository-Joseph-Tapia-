@@ -15,7 +15,7 @@ public class WASD_rb : MonoBehaviour
 
     private Color defaultColor = Color.white;
 
-    private Color cb;
+    private SpriteRenderer cb;
 
     public GameManager gameManager;
     
@@ -25,7 +25,7 @@ public class WASD_rb : MonoBehaviour
      //Find the Rigibody on the object this script is on
      rb = GetComponent<Rigidbody2D>();
 
-     cb = GetComponent<SpriteRenderer>().color;
+     cb = GetComponent<SpriteRenderer>();
 
     //Find the GameManager
     gameManager = FindObjectOfType<GameManager>();
@@ -66,14 +66,14 @@ public class WASD_rb : MonoBehaviour
         if(collision.transform.tag == "Player2")
         {
             //Find the Color component of the item and change it to red.
-           cb = Color.cyan;
+           cb.color = Color.cyan;
         }
 
         //Make the Cube change color when it hits player3 cube.
         if(collision.transform.tag == "Player3")
         {
             //Find the Color component of the item and change it to red.
-            cb = Color.magenta;
+            cb.color = Color.magenta;
         }
 
         //Score Plus 1
@@ -85,7 +85,7 @@ public class WASD_rb : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision) 
     {
         //Find the Color component of the item and change it to the color assigned to defaultColor.
-        cb = defaultColor;
+        cb.color = defaultColor;
     }
 
     
