@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8958ebe4f164b7f4d9ba8d1b38e08690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impactSound: {fileID: 8300000, guid: eaeeea5c5b6da584b98d14d0e9111bb2, type: 3}
+  impactSound: {fileID: 0}
   forceAmt: 10
 --- !u!82 &41667437
 AudioSource:
