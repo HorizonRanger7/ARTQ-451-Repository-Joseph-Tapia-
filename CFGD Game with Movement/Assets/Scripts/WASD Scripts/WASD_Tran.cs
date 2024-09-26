@@ -18,7 +18,7 @@ public class WASD_Tran : MonoBehaviour
     private void Awake()
     {
         pl2 = this.gameObject;
-        gameManager = FindObjectOfType<GameManager>();
+        //gameManager = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -62,10 +62,10 @@ public class WASD_Tran : MonoBehaviour
             spawn = false;
             if(collision.transform.tag == "Player")
             {
-                gameManager.sc_num++;
+                //gameManager.sc_num++;
             }else if (collision.transform.tag == "Player 3")
             {
-                gameManager.p3sc_num++;
+                //gameManager.p3sc_num++;
             }
 
         //Spawn a new Player 2 at a random location

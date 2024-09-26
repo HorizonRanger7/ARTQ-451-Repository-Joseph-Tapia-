@@ -73,7 +73,8 @@ public class WASD_rb : MonoBehaviour
             cb.color = Color.magenta;
         }
 
-        
+        GameManager.instance.StartGame();
+
     }
 
 
