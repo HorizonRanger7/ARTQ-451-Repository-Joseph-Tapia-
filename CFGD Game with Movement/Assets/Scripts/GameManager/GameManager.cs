@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     //Variables
+    
     //Make it a singleton!
 
     public static GameManager instance;
@@ -21,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     private bool canStart = true;
 
-    //Awake is called on s[awn of this script before Start
+    //Awake is called on spawn of this script before Start
 
     private void Awake()
     {
